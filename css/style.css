@@ -1,0 +1,189 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #ccb;
+  color: white;
+  min-height: 100vh;
+  min-width: 100vw;
+  font-family: 'Passion One', cursive;
+  overflow-x: hidden;
+}
+
+div.main {
+  height: 30vh;
+  min-width: 100%;
+  background-image: -webkit-gradient(linear, left top, right top, from(#ccb), to(blue));
+  background-image: linear-gradient(to right, #ccb, blue);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+div.main div.left {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 10vh;
+  -ms-flex-preferred-size: 60%;
+      flex-basis: 60%;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+div.main div.left h1 {
+  opacity: 0.7;
+}
+
+div.main div.left h1 span {
+  color: yellow;
+}
+
+div.main div.left h1 span.dot {
+  opacity: 1;
+  -webkit-animation: blinkDot 2s infinite linear;
+          animation: blinkDot 2s infinite linear;
+}
+
+div.main div.right {
+  color: yellow;
+  -ms-flex-preferred-size: 40%;
+      flex-basis: 40%;
+  position: relative;
+}
+
+div.main div.right i {
+  font-size: 17vh;
+  position: absolute;
+  right: 4vw;
+  top: 0;
+}
+
+div.main div.right div.watch {
+  font-size: 4vw;
+  position: absolute;
+  bottom: 0;
+  right: 3vw;
+  color: white;
+}
+
+nav.main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-transform: uppercase;
+  background-color: royalblue;
+  height: 7vh;
+  width: 100%;
+}
+
+nav.main.active {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+nav.main div.block {
+  border: 2px solid black;
+  border-radius: 7px;
+  height: 100%;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 5vh;
+}
+
+div.block:hover {
+  background-color: white;
+  color: royalblue;
+  cursor: pointer;
+}
+
+section {
+  min-height: 150vh;
+  width: 85%;
+  margin: auto;
+  background-color: royalblue;
+}
+
+footer {
+  background-color: black;
+  height: 30vh;
+  border-top-left-radius: 8%;
+  border-top-right-radius: 8%;
+}
+
+@-webkit-keyframes blinkDot {
+  0% {
+    opacity: 0.2;
+  }
+  15% {
+    opacity: 0.6;
+  }
+  30% {
+    opacity: 1;
+  }
+  45% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 0.7;
+  }
+  80% {
+    opacity: 0;
+  }
+  92% {
+    opacity: 1;
+  }
+}
+
+@keyframes blinkDot {
+  0% {
+    opacity: 0.2;
+  }
+  15% {
+    opacity: 0.6;
+  }
+  30% {
+    opacity: 1;
+  }
+  45% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 0.7;
+  }
+  80% {
+    opacity: 0;
+  }
+  92% {
+    opacity: 1;
+  }
+}
+/*# sourceMappingURL=style.css.map */

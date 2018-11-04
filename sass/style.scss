@@ -1,0 +1,155 @@
+@import "variable";
+@import "mixin";
+
+*{
+    box-sizing: border-box;
+    @include reset;
+}
+
+
+
+body{
+    background-color: $bgcolor;
+    color: $color;    
+    min-height: 100vh;
+    min-width: 100vw;
+    font-family: 'Passion One', cursive;  
+    overflow-x: hidden;  
+    
+}
+ 
+div.main{
+    height: 30vh;
+    min-width: 100%;
+    background-image: $color-logo;
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-start;
+    flex-grow: 1;
+    
+    div.left{
+       
+        font-family: 'Roboto Mono', monospace;        
+        font-size: 10vh;        
+       // background-color: aquamarine;
+        flex-basis: 60%;
+        align-self: flex-end;
+       
+       
+        h1{
+            opacity:0.7;
+       
+    
+            span{
+                color:yellow;
+                
+
+                &.dot{
+                    opacity:1;
+                    animation: blinkDot 2s infinite linear;
+                }
+            }
+        }
+    }
+    
+    div.right{        
+        color: yellow;       
+       // background-color: greenyellow;
+        flex-basis: 40%;
+        position: relative;
+
+        i{
+            font-size: 17vh ;
+            position:absolute;
+            right: 4vw;
+            top:0;
+        }
+       div.watch{
+
+            font-size: 4vw;
+           position: absolute;
+           bottom: 0;
+           right: 3vw;
+           color: $color;
+       }
+
+    }
+    
+}
+
+
+nav.main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    background-color: royalblue;
+    height: 7vh;
+    width: 100%;
+
+    &.active{
+        position: fixed;
+        top:0;
+        left: 0;
+    }
+
+    div.block{
+        border: 2px solid black;
+        border-radius: 7px;
+        height: 100%;
+        flex-grow: 1;    
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 5vh;
+    }
+    
+    
+}
+
+
+div.block:hover{
+    background-color: $color;
+    color:royalblue;
+    cursor: pointer;
+
+}
+
+section{
+    min-height:150vh;
+    width: 85%;
+    margin: auto;
+    background-color: royalblue;
+}
+
+footer{
+    background-color: black;
+    height: 30vh;
+    border-top-left-radius: 8%;
+    border-top-right-radius: 8%;
+}
+
+@keyframes blinkDot{
+    0%{
+        opacity:0.2;
+    }
+    15%{
+        opacity:0.6;
+    }
+    30%{
+        opacity:1;
+    }
+    45%{
+        opacity:0;
+    }
+    60%{
+        opacity: 0.7;;
+    }
+    80%{
+        opacity: 0;
+    }
+    92%{
+        opacity: 1;
+    }
+}
+
