@@ -1,0 +1,156 @@
+*{
+    box-sizing: border-box;
+    @include reset;
+}
+div.main{
+    height: 30vh;
+    min-width: 100%;
+    background-image: $color-logo;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    flex-grow: 1;
+    border-bottom: 1px solid blue;
+    
+    div.left{
+       
+        font-family: 'Roboto Mono', monospace;        
+        font-size: 8vh;        
+       // background-color: aquamarine;
+        flex-basis: 40%;
+        display: flex;  
+        justify-content: center;
+       
+        h1{
+            opacity:0.6;
+            transition:opacity 0.4s;           
+            
+            &:hover{
+                opacity:1;
+                cursor: pointer;
+                
+            }
+       
+    
+            span{
+                color:yellow;                
+
+                &.dot{
+                    opacity:1;
+                    animation: blinkDot 2s infinite linear ;
+                  
+                }
+            }
+        }
+    }
+    
+    div.right{        
+        color: yellow;       
+       // background-color: greenyellow;
+        flex-basis: 60%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        
+        div.rightlogo{
+            font-size: 8vh;
+            letter-spacing: 1vh;
+            color: $color;
+            &:first-of-type{
+                align-self: flex-end;
+               // margin-right:20vh;
+                font-size: 16vh; 
+                &:hover~.sign{
+                    animation: disapper 5s both; 
+                }
+                i{                                   
+                    right: 5vw;
+                    top:0;       
+                    color: yellow;
+                    cursor: pointer;
+                }
+              
+            }
+            &.sign{
+                opacity: 0;
+                cursor: pointer;
+                &:hover
+                {
+                    animation: disapper 5s both;
+                }
+            }
+        }
+        
+      
+
+    }
+    
+}
+
+
+nav.main{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    text-transform: uppercase;
+    background-color: royalblue;
+    min-width: 100%;
+    border-bottom: 1px solid blue;
+    
+
+    &.active{
+        position: fixed;
+        top:0;
+        left: 0;
+    }
+
+    div.block{
+       // border: 2px solid black;
+        border-radius: 7px;
+        height: 100%;
+        flex-basis:15%;    
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 5vh;
+        background-color: auto;
+        color: auto;
+        transition:color  1.5s , background-color 1.5s;
+        padding: 2vh;
+
+        &:hover{
+            background-color: $color;
+            color:royalblue;
+            cursor: pointer;        
+        }
+
+    }
+    div.social{
+
+        flex-grow: 1;        
+        height: 100%;
+        display: flex;
+        font-size: 4vh;
+        justify-content: center;
+       
+        .net{
+            flex-basis: 20%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            a{
+                text-decoration: none;
+                color: white;
+            }
+            &:hover{
+                font-size: 5vh;
+                color:white;
+            }
+            
+        }
+    }
+    
+    
+}

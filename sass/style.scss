@@ -11,122 +11,91 @@
 body{
     background-color: $bgcolor;
     color: $color;    
-    min-height: 100vh;
-    min-width: 100vw;
+    min-height: 100vh;    
     font-family: 'Passion One', cursive;  
     overflow-x: hidden;  
     
 }
+@import "topside";
+
+
  
-div.main{
-    height: 30vh;
-    min-width: 100%;
-    background-image: $color-logo;
-    display: flex;
-    align-items: stretch;
-    justify-content: flex-start;
-    flex-grow: 1;
-    
-    div.left{
-       
-        font-family: 'Roboto Mono', monospace;        
-        font-size: 10vh;        
-       // background-color: aquamarine;
-        flex-basis: 60%;
-        align-self: flex-end;
-       
-       
-        h1{
-            opacity:0.7;
-       
-    
-            span{
-                color:yellow;
-                
-
-                &.dot{
-                    opacity:1;
-                    animation: blinkDot 2s infinite linear;
-                }
-            }
-        }
-    }
-    
-    div.right{        
-        color: yellow;       
-       // background-color: greenyellow;
-        flex-basis: 40%;
-        position: relative;
-
-        i{
-            font-size: 17vh ;
-            position:absolute;
-            right: 4vw;
-            top:0;
-        }
-       div.watch{
-
-            font-size: 4vw;
-           position: absolute;
-           bottom: 0;
-           right: 3vw;
-           color: $color;
-       }
-
-    }
-    
-}
 
 
-nav.main{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-transform: uppercase;
-    background-color: royalblue;
-    height: 7vh;
-    width: 100%;
-
-    &.active{
-        position: fixed;
-        top:0;
-        left: 0;
-    }
-
-    div.block{
-        border: 2px solid black;
-        border-radius: 7px;
-        height: 100%;
-        flex-grow: 1;    
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 5vh;
-    }
-    
-    
-}
-
-
-div.block:hover{
-    background-color: $color;
-    color:royalblue;
-    cursor: pointer;
-
-}
-
-section{
+article{
     min-height:150vh;
     width: 85%;
     margin: auto;
     background-color: royalblue;
+    display: flex;
+    flex-direction: column;
+}
+
+section{
+    flex-basis: 100vh;
+    border-bottom: 1px blue dotted;
 }
 
 footer{
     background-color: black;
-    height: 30vh;
+     min-height: 30vh;
     border-top-left-radius: 8%;
     border-top-right-radius: 8%;
+    display: flex;
+    justify-content: flex-start;
+    div.leftfoot{
+        border-right: 2px white dashed;
+        flex-basis: 45%;      
+    }
+}
+
+@media only screen and (max-width:1000px)
+{
+    div.main div.left{
+        font-size: 6vh;
+    }
+    div.main div.right div.rightlogo{
+        font-size: 5vh;
+    } 
+    nav.main div.block{
+        font-size: 3vh;
+    }
+
+    div.main div.right div.rightlogo:first-of-type {
+        margin-right: 10vh;
+        font-size: 12vh;
+    }
+    nav.main div.social .net{
+        font-size: 3vh;
+    }
+}
+
+@media only screen and (max-width:768px){
+    div.main{
+        div.left{
+            align-items: flex-end;
+        }
+        div.right{
+            justify-content: flex-end;
+            align-items: stretch;
+            div.rightlogo.sign{
+                font-size: 3vh;
+               
+            }
+        }
+    }
+     
+    nav.main{
+        position: fixed;
+        left: 0;
+        top:0;
+        
+        div.block{
+            font-size: 2vh;
+        }
+
+    }
+
 }
 
 @keyframes blinkDot{
@@ -150,6 +119,13 @@ footer{
     }
     92%{
         opacity: 1;
+
+    }
+}
+
+@keyframes disapper{
+    100%{
+        opacity: 1 ;
     }
 }
 
