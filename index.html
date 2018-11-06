@@ -14,7 +14,7 @@
     
     
     <header>
-        <div class="main">
+        <div id="start" class="main">
             <div class="left"><h1><span>&lt/</span>web<span>&gt</span><span class="dot">.</span></h1></div>
             <div class="right">
                 <div class="rightlogo"><i class="icons icon-bat1"></i></div>
@@ -23,10 +23,10 @@
             </div>
         </div>
         <nav class="main ">
-            <div class="block">O mnie</div>
-            <div class="block">Umiejetnosci</div>
-            <div class="block">Projekty</div>
-            <div class="block">Kontakt</div>
+           <a href="#aboutme"><div class="block">O mnie</div></a> 
+           <a href="#skills"><div class="block">Umiejetnosci</div></a>
+           <a href="#project"><div class="block">Projekty</div></a>
+           <a href="#contact"><div class="block">Kontakt</div></a>
             <div class="social">
                 <div  class="net git"><a href="https://www.facebook.com/" target="_blank"><i class="demo-icon icon-facebook"></i> </a></div>
                 <div  class="net fb"><a href="https://Github.com/adi140000" target="_blank"><i class="demo-icon icon-github-circled"></i></a></div>
@@ -34,15 +34,16 @@
             </div>
         </nav>
         <article>
-            <section></section>
-            <section></section>
-            <section></section>
-            <section></section>
+            <section id="aboutme"></section>
+            <section id="skills"></section>
+            <section id="project"></section>
+            <section id="contact"></section>
         </article>
         <footer>
-            <div class="leftfoot"></div>
+            <div class="leftfoot"><i class="demo-icon icon-spin3 animate-spin"></i> </div>
             <div class="rightfoot"></div>
         </footer>
+        <div class="arrow"><a href="#start"><i class="demo-icon icon-angle-circled-up"></i></a></div>
     </header>
     <script  src="https://code.jquery.com/jquery-3.3.1.js" ></script>
     <script src="script.js"></script>

@@ -3,8 +3,7 @@
     @include reset;
 }
 div.main{
-    height: 30vh;
-    min-width: 100%;
+    height: 30vh;    
     background-image: $color-logo;
     display: flex;
     align-items: stretch;
@@ -109,7 +108,7 @@ nav.main{
        // border: 2px solid black;
         border-radius: 7px;
         height: 100%;
-        flex-basis:15%;    
+        flex-basis: 18%;   
         display: flex;
         justify-content: center;
         align-items: center;
@@ -118,7 +117,7 @@ nav.main{
         color: auto;
         transition:color  1.5s , background-color 1.5s;
         padding: 2vh;
-
+    
         &:hover{
             background-color: $color;
             color:royalblue;
@@ -128,7 +127,7 @@ nav.main{
     }
     div.social{
 
-        flex-grow: 1;        
+        flex-grow: 1;          
         height: 100%;
         display: flex;
         font-size: 4vh;

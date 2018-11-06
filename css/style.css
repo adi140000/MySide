@@ -13,6 +13,11 @@ body {
   overflow-x: hidden;
 }
 
+a {
+  color: white;
+  text-decoration: none;
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -22,7 +27,6 @@ body {
 
 div.main {
   height: 30vh;
-  min-width: 100%;
   background-image: -webkit-gradient(linear, left top, right top, from(#c4bbcc), to(blue));
   background-image: linear-gradient(to right, #c4bbcc, blue);
   display: -webkit-box;
@@ -152,8 +156,8 @@ nav.main.active {
 nav.main div.block {
   border-radius: 7px;
   height: 100%;
-  -ms-flex-preferred-size: 15%;
-      flex-basis: 15%;
+  -ms-flex-preferred-size: 18%;
+      flex-basis: 18%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -218,7 +222,7 @@ nav.main div.social .net:hover {
 
 article {
   min-height: 150vh;
-  width: 85%;
+  width: 80%;
   margin: auto;
   background-color: royalblue;
   display: -webkit-box;
@@ -233,14 +237,15 @@ article {
 section {
   -ms-flex-preferred-size: 100vh;
       flex-basis: 100vh;
-  border-bottom: 1px blue dotted;
+  border-top: 1vh blue dashed;
+}
+
+section:first-of-type {
+  border-top: 0 blue dashed;
 }
 
 footer {
   background-color: black;
-  min-height: 30vh;
-  border-top-left-radius: 8%;
-  border-top-right-radius: 8%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -250,9 +255,41 @@ footer {
 }
 
 footer div.leftfoot {
-  border-right: 2px white dashed;
-  -ms-flex-preferred-size: 45%;
-      flex-basis: 45%;
+  border-right: 0.7vh white dashed;
+  -ms-flex-preferred-size: 25%;
+      flex-basis: 25%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding: 8vh;
+}
+
+footer div.leftfoot i {
+  font-size: 15vh;
+  -webkit-transform: rotate(0);
+          transform: rotate(0);
+  -webkit-animation: loading 1s infinite linear;
+          animation: loading 1s infinite linear;
+}
+
+div.arrow {
+  position: fixed;
+  font-size: 10vh;
+  right: 1vh;
+  bottom: 40vh;
+  cursor: pointer;
+  display: none;
+  opacity: 0.5;
+}
+
+div.arrow a {
+  color: royalblue;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -262,8 +299,16 @@ footer div.leftfoot {
   div.main div.right div.rightlogo {
     font-size: 5vh;
   }
+  nav.main {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
   nav.main div.block {
     font-size: 3vh;
+    -webkit-box-flex: 2;
+        -ms-flex-positive: 2;
+            flex-grow: 2;
   }
   div.main div.right div.rightlogo:first-of-type {
     margin-right: 10vh;
@@ -271,6 +316,12 @@ footer div.leftfoot {
   }
   nav.main div.social .net {
     font-size: 3vh;
+  }
+  footer div.leftfoot i {
+    font-size: 7vh;
+  }
+  div.arrow {
+    font-size: 6vh;
   }
 }
 
@@ -298,6 +349,30 @@ footer div.leftfoot {
   }
   nav.main div.block {
     font-size: 2vh;
+  }
+  article {
+    width: 100%;
+  }
+  footer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  footer div.leftfoot {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    border-right: 0;
+  }
+  footer div.leftfoot i {
+    font-size: 15vh;
+  }
+  div.arrow {
+    right: 0;
+  }
+  div.arrow i {
+    color: white;
   }
 }
 
@@ -358,6 +433,20 @@ footer div.leftfoot {
 @keyframes disapper {
   100% {
     opacity: 1;
+  }
+}
+
+@-webkit-keyframes loading {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes loading {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
 }
 /*# sourceMappingURL=style.css.map */

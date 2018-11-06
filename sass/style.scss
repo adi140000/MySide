@@ -16,6 +16,11 @@ body{
     overflow-x: hidden;  
     
 }
+
+a{
+    color:white;
+    text-decoration: none;
+}
 @import "topside";
 
 
@@ -24,7 +29,7 @@ body{
 
 article{
     min-height:150vh;
-    width: 85%;
+    width: 80%;
     margin: auto;
     background-color: royalblue;
     display: flex;
@@ -33,20 +38,47 @@ article{
 
 section{
     flex-basis: 100vh;
-    border-bottom: 1px blue dotted;
+    border-top: 1vh blue dashed;
+    &:first-of-type{
+        border-top: 0 blue dashed;
+    }
+        
+    
 }
 
 footer{
-    background-color: black;
-     min-height: 30vh;
-    border-top-left-radius: 8%;
-    border-top-right-radius: 8%;
+    background-color: black;     
     display: flex;
     justify-content: flex-start;
     div.leftfoot{
-        border-right: 2px white dashed;
-        flex-basis: 45%;      
+        border-right: 0.7vh white dashed;
+        flex-basis: 25%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding: 8vh;
+        i{
+            font-size: 15vh;
+            transform: rotate(0);
+            animation: loading 1s infinite linear;
+
+        }
     }
+}
+
+div.arrow{
+    position: fixed;
+    font-size: 10vh;
+    right: 1vh;
+    bottom: 40vh;    
+    cursor: pointer;
+    display: none;
+    opacity: 0.5;    
+    a{
+        
+        color: royalblue;
+    }
+    
 }
 
 @media only screen and (max-width:1000px)
@@ -57,10 +89,15 @@ footer{
     div.main div.right div.rightlogo{
         font-size: 5vh;
     } 
-    nav.main div.block{
-        font-size: 3vh;
-    }
+    nav.main{
+        justify-content: center;
+        div.block{
+            font-size: 3vh;
+            flex-grow: 2;
+        }
+    
 
+    } 
     div.main div.right div.rightlogo:first-of-type {
         margin-right: 10vh;
         font-size: 12vh;
@@ -68,10 +105,25 @@ footer{
     nav.main div.social .net{
         font-size: 3vh;
     }
+
+    footer{
+        
+
+       div.leftfoot{
+           i{
+               font-size:7vh;
+           }
+       }
+    }
+
+    div.arrow{
+        font-size: 6vh;
+    }
 }
 
 @media only screen and (max-width:768px){
     div.main{
+        
         div.left{
             align-items: flex-end;
         }
@@ -94,6 +146,28 @@ footer{
             font-size: 2vh;
         }
 
+    }
+
+    article{
+        width: 100%;
+    }
+
+    footer{
+        flex-direction: column;
+        div.leftfoot{
+            justify-content: center;
+            border-right: 0;
+            i{
+                font-size: 15vh;
+            }            
+        }
+    }
+
+    div.arrow{
+        right: 0;
+        i{
+            color: white;
+        }
     }
 
 }
@@ -126,6 +200,13 @@ footer{
 @keyframes disapper{
     100%{
         opacity: 1 ;
+    }
+}
+
+@keyframes loading{
+
+    100%{
+        transform: rotate(360deg);
     }
 }
 
