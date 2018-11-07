@@ -8,13 +8,13 @@ const sections = document.querySelectorAll("article section.work");
 
 const toggleOpacity=function(){
     
-    sections.forEach(section=>{
+    sections.forEach(function (section){
         console.log(scrollY);
         console.log(section.offsetTop);
-        if(window.scrollY>=(section.offsetTop))
+        if(window.scrollY>=(section.offsetTop-(section.offsetHeight*0.15)))
         {
             console.log("work");
-            section.classList.add("active");
+            section.classList.add("active");            
             //section.style.opacity=1;
            // $(section).animate({opacity},400);
         }

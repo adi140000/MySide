@@ -36,13 +36,14 @@ article{
     flex-direction: column;
     overflow: hidden;
     section{
-        flex-basis: 100vh;
+        //flex-basis: 100vh;
         border-top: 1vh blue dashed;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
         opacity: 0;
+        transition: 1.5s ease;
         &.active{
             opacity: 1;
         }
@@ -52,8 +53,18 @@ article{
         }
         div.section-logo{
             padding: 8vh;
-            font-size: 15vh;       
+            font-size: 15vh;    
             
+            i{
+                animation:blinkLogo  10s infinite ease;    
+            } 
+            
+        }
+        div.section-content{
+            padding: 10vh;
+            font-size: 4vh;
+            text-align: justify;
+            padding-bottom: 30vh;
         }
             
         
@@ -79,6 +90,13 @@ footer{
             animation: loading 1s infinite linear;
 
         }
+    }
+    div.rightfoot{
+        font-size: 8vh;
+        width: 100%;
+        text-align: center;
+        height: 100%;
+        font-family: 'Ubuntu', sans-serif;
     }
 }
 
@@ -140,7 +158,7 @@ div.arrow{
     }
 
     div.arrow{
-        font-size: 6vh;
+        font-size: 8vh;
     }
 }
 
@@ -150,18 +168,12 @@ div.arrow{
     }
     header{
     div.main{
-        
+        padding: 20vh;
         div.left{
             align-items: flex-end;
         }
         div.right{
-            display: none;
-            justify-content: flex-end;
-            align-items: stretch;            
-            div.rightlogo.sign{
-                font-size: 3vh;
-               
-            }
+            display: none;         
         }
     }
      
@@ -212,26 +224,15 @@ div.arrow{
     }
     header{
     div.main{
-        
+        padding: 10vh;
         div.left{
             align-items: flex-end;
             font-size: 5vh;
+            
         }
         div.right{
             display: none;
-            justify-content: flex-end;
-            align-items: stretch;           
-            
-            div.rightlogo{
-                
-                &:first-of-type{
-                    font-size: 4vh;
-                }
-
-                &.sign{
-                font-size: 1vh;
-               
-            }}
+           
             
         }
     }
@@ -260,6 +261,10 @@ div.arrow{
         section{
             div.section-logo{
                 font-size: 10vh;
+            }
+            div.section-content{
+                padding: 6vh;
+                font-size: 3vh;
             }
         }
     }
@@ -322,3 +327,26 @@ div.arrow{
     }
 }
 
+@keyframes blinkLogo{
+    20%{
+        color: yellow;
+    }
+    25%{
+        color: white;
+    }
+    45%{
+        color: yellow;
+    }
+    50%{
+        color: white;
+    }
+    70%{
+        color: yellow;
+    }
+    75%{
+        color: white;
+    }
+    95%{
+        color: yellow;
+    }
+}

@@ -32,9 +32,10 @@ header {
 }
 
 header div.main {
-  height: 30vh;
-  background-image: -webkit-gradient(linear, left top, right top, from(#c4bbcc), to(blue));
-  background-image: linear-gradient(to right, #c4bbcc, blue);
+  height: 50vh;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#c4bbcc), to(blue));
+  background-image: linear-gradient(to bottom, #c4bbcc, blue);
+  background-attachment: fixed;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -242,8 +243,6 @@ article {
 }
 
 article section {
-  -ms-flex-preferred-size: 100vh;
-      flex-basis: 100vh;
   border-top: 1vh blue dashed;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -259,6 +258,8 @@ article section {
       -ms-flex-align: center;
           align-items: center;
   opacity: 0;
+  -webkit-transition: 1.5s ease;
+  transition: 1.5s ease;
 }
 
 article section.active {
@@ -273,6 +274,18 @@ article section:first-of-type {
 article section div.section-logo {
   padding: 8vh;
   font-size: 15vh;
+}
+
+article section div.section-logo i {
+  -webkit-animation: blinkLogo  10s infinite ease;
+          animation: blinkLogo  10s infinite ease;
+}
+
+article section div.section-content {
+  padding: 10vh;
+  font-size: 4vh;
+  text-align: justify;
+  padding-bottom: 30vh;
 }
 
 footer {
@@ -307,6 +320,14 @@ footer div.leftfoot i {
           transform: rotate(0);
   -webkit-animation: loading 1s infinite linear;
           animation: loading 1s infinite linear;
+}
+
+footer div.rightfoot {
+  font-size: 8vh;
+  width: 100%;
+  text-align: center;
+  height: 100%;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 div.arrow {
@@ -355,13 +376,16 @@ div.arrow a {
     font-size: 7vh;
   }
   div.arrow {
-    font-size: 6vh;
+    font-size: 8vh;
   }
 }
 
 @media only screen and (max-width: 780px) {
   body {
     overflow-x: hidden;
+  }
+  header div.main {
+    padding: 20vh;
   }
   header div.main div.left {
     -webkit-box-align: end;
@@ -370,15 +394,6 @@ div.arrow a {
   }
   header div.main div.right {
     display: none;
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
-    -webkit-box-align: stretch;
-        -ms-flex-align: stretch;
-            align-items: stretch;
-  }
-  header div.main div.right div.rightlogo.sign {
-    font-size: 3vh;
   }
   header nav.main {
     position: fixed;
@@ -421,6 +436,9 @@ div.arrow a {
   body {
     overflow-x: hidden;
   }
+  header div.main {
+    padding: 10vh;
+  }
   header div.main div.left {
     -webkit-box-align: end;
         -ms-flex-align: end;
@@ -429,18 +447,6 @@ div.arrow a {
   }
   header div.main div.right {
     display: none;
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
-    -webkit-box-align: stretch;
-        -ms-flex-align: stretch;
-            align-items: stretch;
-  }
-  header div.main div.right div.rightlogo:first-of-type {
-    font-size: 4vh;
-  }
-  header div.main div.right div.rightlogo.sign {
-    font-size: 1vh;
   }
   header nav.main {
     position: fixed;
@@ -456,6 +462,10 @@ div.arrow a {
   }
   article section div.section-logo {
     font-size: 10vh;
+  }
+  article section div.section-content {
+    padding: 6vh;
+    font-size: 3vh;
   }
   footer {
     -webkit-box-orient: vertical;
@@ -551,6 +561,54 @@ div.arrow a {
   100% {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes blinkLogo {
+  20% {
+    color: yellow;
+  }
+  25% {
+    color: white;
+  }
+  45% {
+    color: yellow;
+  }
+  50% {
+    color: white;
+  }
+  70% {
+    color: yellow;
+  }
+  75% {
+    color: white;
+  }
+  95% {
+    color: yellow;
+  }
+}
+
+@keyframes blinkLogo {
+  20% {
+    color: yellow;
+  }
+  25% {
+    color: white;
+  }
+  45% {
+    color: yellow;
+  }
+  50% {
+    color: white;
+  }
+  70% {
+    color: yellow;
+  }
+  75% {
+    color: white;
+  }
+  95% {
+    color: yellow;
   }
 }
 /*# sourceMappingURL=style.css.map */

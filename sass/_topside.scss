@@ -9,8 +9,9 @@ header{
 
 
     div.main{
-        height: 30vh;    
+        height: 50vh;    
         background-image: $color-logo;
+        background-attachment: fixed;
         display: flex;
         align-items: stretch;
         justify-content: center;
