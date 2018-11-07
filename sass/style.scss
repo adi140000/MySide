@@ -14,7 +14,7 @@ body{
     min-height: 100vh;    
     font-family: 'Passion One', cursive;  
     overflow-x: hidden;  
-    
+    max-width: 100vw !important; 
 }
 
 a{
@@ -34,17 +34,33 @@ article{
     background-color: royalblue;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
+    section{
+        flex-basis: 100vh;
+        border-top: 1vh blue dashed;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        opacity: 0;
+        &.active{
+            opacity: 1;
+        }
+        &:first-of-type{
+            border-top: 0 blue dashed;
+            opacity: 1;
+        }
+        div.section-logo{
+            padding: 8vh;
+            font-size: 15vh;       
+            
+        }
+            
+        
+    }
 }
 
-section{
-    flex-basis: 100vh;
-    border-top: 1vh blue dashed;
-    &:first-of-type{
-        border-top: 0 blue dashed;
-    }
-        
-    
-}
+
 
 footer{
     background-color: black;     
@@ -76,13 +92,16 @@ div.arrow{
     opacity: 0.5;    
     a{
         
-        color: royalblue;
+        color: yellow;
     }
     
 }
 
-@media only screen and (max-width:1000px)
+@media only screen and (max-width:1000px )
 {
+    body{
+        overflow-x: hidden;
+    }
     div.main div.left{
         font-size: 6vh;
     }
@@ -99,11 +118,14 @@ div.arrow{
 
     } 
     div.main div.right div.rightlogo:first-of-type {
-        margin-right: 10vh;
+        margin-right: 2vh;
         font-size: 12vh;
     }
-    nav.main div.social .net{
+    nav.main {              
+        
+        div.social .net{
         font-size: 3vh;
+        }
     }
 
     footer{
@@ -112,6 +134,7 @@ div.arrow{
        div.leftfoot{
            i{
                font-size:7vh;
+
            }
        }
     }
@@ -121,15 +144,20 @@ div.arrow{
     }
 }
 
-@media only screen and (max-width:768px){
+@media only screen and (max-width:780px) {
+    body{
+        overflow-x: hidden;
+    }
+    header{
     div.main{
         
         div.left{
             align-items: flex-end;
         }
         div.right{
+            display: none;
             justify-content: flex-end;
-            align-items: stretch;
+            align-items: stretch;            
             div.rightlogo.sign{
                 font-size: 3vh;
                
@@ -137,23 +165,107 @@ div.arrow{
         }
     }
      
-    nav.main{
+    
+    nav.main{    
         position: fixed;
         left: 0;
-        top:0;
-        
-        div.block{
-            font-size: 2vh;
+        top: 0;
+        a.block{
+            font-size: 3.5vh;
+        }
+        div.social{
+            
+            i{
+                font-size: 3.5vh;
+            }
         }
 
     }
-
+   }
     article{
-        width: 100%;
+        width: 100vw;
     }
 
     footer{
-        flex-direction: column;
+       flex-direction: column;
+        div.leftfoot{
+            justify-content: center;
+            border-right: 0;
+            i{
+                font-size: 15vh;
+            }            
+        }
+    }
+
+    div.arrow{
+        right: 0;
+        i{
+            color: white;
+        }
+    }
+
+}
+
+@media only screen and (orientation:portrait){
+    body{
+        overflow-x: hidden;
+    }
+    header{
+    div.main{
+        
+        div.left{
+            align-items: flex-end;
+            font-size: 5vh;
+        }
+        div.right{
+            display: none;
+            justify-content: flex-end;
+            align-items: stretch;           
+            
+            div.rightlogo{
+                
+                &:first-of-type{
+                    font-size: 4vh;
+                }
+
+                &.sign{
+                font-size: 1vh;
+               
+            }}
+            
+        }
+    }
+     
+    
+    nav.main{    
+        position: fixed;
+        left: 0;
+        top: 0;
+        opacity: 1;
+
+        a.block{
+            font-size: 1.5vh;
+        }
+        div.social{
+            
+            i{
+                font-size: 2vh;
+            }
+        }
+
+    }
+   }
+    article{
+
+        section{
+            div.section-logo{
+                font-size: 10vh;
+            }
+        }
+    }
+
+    footer{
+       flex-direction: column;
         div.leftfoot{
             justify-content: center;
             border-right: 0;

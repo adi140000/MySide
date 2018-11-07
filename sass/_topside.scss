@@ -2,90 +2,98 @@
     box-sizing: border-box;
     @include reset;
 }
-div.main{
-    height: 30vh;    
-    background-image: $color-logo;
-    display: flex;
-    align-items: stretch;
-    justify-content: center;
-    flex-grow: 1;
-    border-bottom: 1px solid blue;
-    
-    div.left{
-       
-        font-family: 'Roboto Mono', monospace;        
-        font-size: 8vh;        
-       // background-color: aquamarine;
-        flex-basis: 40%;
-        display: flex;  
-        justify-content: center;
-       
-        h1{
-            opacity:0.6;
-            transition:opacity 0.4s;           
-            
-            &:hover{
-                opacity:1;
-                cursor: pointer;
-                
-            }
-       
-    
-            span{
-                color:yellow;                
 
-                &.dot{
-                    opacity:1;
-                    animation: blinkDot 2s infinite linear ;
-                  
-                }
-            }
-        }
-    }
-    
-    div.right{        
-        color: yellow;       
-       // background-color: greenyellow;
-        flex-basis: 60%;
+header{
+    max-width: 100vw ;
+    overflow: hidden;
+
+
+    div.main{
+        height: 30vh;    
+        background-image: $color-logo;
         display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
+        align-items: stretch;
+        justify-content: center;
+        flex-grow: 1;
+        border-bottom: 1px solid blue;
         
-        div.rightlogo{
-            font-size: 8vh;
-            letter-spacing: 1vh;
-            color: $color;
-            &:first-of-type{
-                align-self: flex-end;
-               // margin-right:20vh;
-                font-size: 16vh; 
-                &:hover~.sign{
-                    animation: disapper 5s both; 
-                }
-                i{                                   
-                    right: 5vw;
-                    top:0;       
-                    color: yellow;
+        div.left{
+        
+            font-family: 'Roboto Mono', monospace;        
+            font-size: 8vh;        
+        // background-color: aquamarine;
+            flex-basis: 40%;
+            display: flex;  
+            justify-content: center;
+        
+            h1{
+                opacity:0.6;
+                transition:opacity 0.4s;           
+                
+                &:hover{
+                    opacity:1;
                     cursor: pointer;
+                    
                 }
-              
-            }
-            &.sign{
-                opacity: 0;
-                cursor: pointer;
-                &:hover
-                {
-                    animation: disapper 5s both;
+        
+        
+                span{
+                    color:yellow;                
+
+                    &.dot{
+                        opacity:1;
+                        animation: blinkDot 2s infinite linear ;
+                    
+                    }
                 }
             }
         }
-        
-      
-
-    }
     
+        div.right{        
+            color: yellow;       
+        // background-color: greenyellow;
+            flex-basis: 60%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            
+            div.rightlogo{
+                font-size: 8vh;
+                letter-spacing: 1vh;
+                color: $color;
+                &:first-of-type{
+                    align-self: flex-end;
+                // margin-right:20vh;
+                    font-size: 16vh; 
+                    &:hover~.sign{
+                        animation: disapper 5s both; 
+                    }
+                    i{                                   
+                        right: 5vw;
+                        top:0;       
+                        color: yellow;
+                        cursor: pointer;
+                    }
+                
+                }
+                &.sign{
+                    opacity: 0;
+                    cursor: pointer;
+                    &:hover
+                    {
+                        animation: disapper 5s both;
+                    }
+                }
+            }
+            
+        
+
+        }
+        
 }
+
+
 
 
 nav.main{
@@ -93,10 +101,9 @@ nav.main{
     align-items: center;
     justify-content: start;
     text-transform: uppercase;
-    background-color: royalblue;
-    min-width: 100%;
+    background-color: royalblue;    
     border-bottom: 1px solid blue;
-    
+    min-width: 100vw;
 
     &.active{
         position: fixed;
@@ -104,11 +111,11 @@ nav.main{
         left: 0;
     }
 
-    div.block{
+    a.block{
        // border: 2px solid black;
         border-radius: 7px;
         height: 100%;
-        flex-basis: 18%;   
+        flex-basis: 15%;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -127,10 +134,10 @@ nav.main{
     }
     div.social{
 
-        flex-grow: 1;          
+        flex-grow: 1;     
         height: 100%;
         display: flex;
-        font-size: 4vh;
+        font-size: 5vh;
         justify-content: center;
        
         .net{
@@ -144,12 +151,12 @@ nav.main{
                 color: white;
             }
             &:hover{
-                font-size: 5vh;
+                font-size: 6vh;
                 color:white;
             }
             
         }
     }
     
-    
+}
 }

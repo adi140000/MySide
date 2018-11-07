@@ -2,7 +2,33 @@ const icons =  document.querySelector(".icons");
 const mainNav = document.querySelector("nav.main");
 const arrow = document.querySelector("div.arrow");
 const logo = document.querySelector("div.main");
+const sections = document.querySelectorAll("article section.work");
 
+
+
+const toggleOpacity=function(){
+    
+    sections.forEach(section=>{
+        console.log(scrollY);
+        console.log(section.offsetTop);
+        if(window.scrollY>=(section.offsetTop))
+        {
+            console.log("work");
+            section.classList.add("active");
+            //section.style.opacity=1;
+           // $(section).animate({opacity},400);
+        }
+        else if(window.scrollY<section.offsetTop-section.offsetHeight)
+        {
+           //section.style.opacity=0;
+           console.log("done");
+            section.classList.remove("active");
+        }
+    })
+}
+
+
+window.addEventListener("scroll",toggleOpacity);
 
 let decision=true
 // nav sticky
