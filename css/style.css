@@ -6,12 +6,12 @@
 }
 
 body {
-  background-color: #c4bbcc;
+  background-image: url("iii.png");
+  background-repeat: repeat;
   color: white;
   min-height: 100vh;
   font-family: 'Passion One', cursive;
   overflow-x: hidden;
-  max-width: 100vw !important;
 }
 
 a {
@@ -263,9 +263,9 @@ article section {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   opacity: 0;
   -webkit-transition: 0.8s ease;
   transition: 0.8s ease;
@@ -280,9 +280,32 @@ article section:first-of-type {
   opacity: 1;
 }
 
+article section.work div.section-content div {
+  margin-bottom: 2vh;
+}
+
+article section.work div.section-content div:hover i.icon-left-open {
+  -webkit-animation: showAfter 3s infinite both;
+          animation: showAfter 3s infinite both;
+}
+
+article section.work div.section-content div i {
+  font-size: 10vh;
+}
+
+article section.work div.section-content div i.icon-left-open {
+  color: yellow;
+  font-size: 4vh;
+  opacity: 0;
+  padding: 0.3vh;
+}
+
 article section div.section-logo {
   padding: 8vh;
   font-size: 15vh;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 article section div.section-logo i {
@@ -293,12 +316,26 @@ article section div.section-logo i {
 article section div.section-content {
   padding: 10vh;
   font-size: 4vh;
-  text-align: justify;
   padding-bottom: 30vh;
+  text-align: justify;
 }
 
-article section div.section-content ul {
-  list-style-type: square type q;
+article section div.section-content ul.skill {
+  list-style-image: url("/img/angle-double-right-solid.svg");
+}
+
+article section div.section-content ul.skill li {
+  padding: 2vh;
+}
+
+article section div.section-content ul.skill li i.icon-left-open {
+  color: yellow;
+  opacity: 0;
+}
+
+article section div.section-content ul.skill li:hover i.icon-left-open {
+  -webkit-animation: showAfter 3s infinite both;
+          animation: showAfter 3s infinite both;
 }
 
 footer {
@@ -528,6 +565,16 @@ div.arrow a {
     padding: 6vh;
     font-size: 3vh;
   }
+  article section.work div.section-content ul.skill li {
+    font-size: 2.5vh;
+    padding: 0.6vh;
+  }
+  article section.work div.section-content div i {
+    font-size: 5vh;
+  }
+  article section.work div.section-content div i.icon-left-open {
+    font-size: 2vh;
+  }
   footer {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -684,6 +731,62 @@ div.arrow a {
   }
   95% {
     color: yellow;
+  }
+}
+
+@-webkit-keyframes showAfter {
+  0% {
+    opacity: 1;
+    padding: .2em;
+  }
+  15% {
+    padding: 0;
+  }
+  30% {
+    padding: .2em;
+  }
+  45% {
+    padding: 0;
+  }
+  60% {
+    padding: .2em;
+  }
+  75% {
+    padding: 0;
+  }
+  90% {
+    padding: .2em;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes showAfter {
+  0% {
+    opacity: 1;
+    padding: .2em;
+  }
+  15% {
+    padding: 0;
+  }
+  30% {
+    padding: .2em;
+  }
+  45% {
+    padding: 0;
+  }
+  60% {
+    padding: .2em;
+  }
+  75% {
+    padding: 0;
+  }
+  90% {
+    padding: .2em;
+  }
+  100% {
+    opacity: 1;
   }
 }
 /*# sourceMappingURL=style.css.map */

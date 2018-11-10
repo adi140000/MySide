@@ -9,12 +9,14 @@
 
 
 body{
-    background-color: $bgcolor;
+   // background-color: $bgcolor;
+    background-image:url("iii.png");
+    background-repeat: repeat;    
     color: $color;    
     min-height: 100vh;    
     font-family: 'Passion One', cursive;  
     overflow-x: hidden;  
-    max-width: 100vw !important; 
+    
 }
 
 a{
@@ -52,9 +54,10 @@ article{
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        align-items: center;
+        align-items: flex-start;
         opacity: 0;
-        transition: 0.8s ease;
+        
+        transition: 0.8s ease;    
         
         &.active{
             opacity: 1;
@@ -63,10 +66,32 @@ article{
             border-top: 0 blue dashed;
             opacity: 1;
         }
+        &.work{
+            div.section-content{
+                div{
+                    margin-bottom: 2vh;
+                    
+                    &:hover i.icon-left-open{
+                       animation: showAfter 3s infinite both;
+                    }
+                    i{
+                        font-size: 10vh;
+                        &.icon-left-open{
+                            color: yellow;
+                            font-size: 4vh;
+                            opacity: 0;
+                            padding: 0.3vh;
+                        }
+                    }
+                }
+                
+            }
+
+        }
         div.section-logo{
             padding: 8vh;
             font-size: 15vh;    
-            
+            align-self: center;
             i{
                 animation:blinkLogo  10s infinite ease;    
             } 
@@ -75,10 +100,21 @@ article{
         div.section-content{
             padding: 10vh;
             font-size: 4vh;
-            text-align: justify;
-            padding-bottom: 30vh;
-            ul{
-                list-style-type: square type q;
+            padding-bottom: 30vh;      
+            text-align: justify;     
+            ul.skill{                
+                list-style-image: url('/img/angle-double-right-solid.svg'); 
+                li{
+                    padding: 2vh;
+                    i.icon-left-open{
+                        color: yellow;
+                        opacity: 0;
+                    }
+                    &:hover i.icon-left-open{
+                        animation: showAfter 3s infinite both;
+                    }
+                }
+                
                 
             }
         }
@@ -310,6 +346,24 @@ div.arrow{
                 padding: 6vh;
                 font-size: 3vh;
             }
+            &.work{
+                div.section-content{
+                    ul.skill{
+                        li{
+                            font-size: 2.5vh;
+                            padding: 0.6vh;
+                        }
+                    }
+                    div{
+                        i{
+                            font-size: 5vh;
+                        }
+                        i.icon-left-open{
+                            font-size: 2vh;
+                        }
+                    }
+                }
+            }
         }
     }
 
@@ -406,5 +460,33 @@ div.arrow{
     }
     95%{
         color: yellow;
+    }
+}
+
+@keyframes showAfter{
+    0%{
+        opacity: 1;
+        padding: .2em;
+    }
+    15%{
+        padding: 0;
+    }
+    30%{
+        padding: .2em;
+    }
+    45%{
+        padding: 0;
+    }
+    60%{
+        padding: .2em;
+    }
+    75%{
+        padding: 0;
+    }
+    90%{
+        padding: .2em;
+    }
+    100%{
+        opacity: 1;
     }
 }
