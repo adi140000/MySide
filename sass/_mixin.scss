@@ -2,3 +2,9 @@
     margin:0;
     padding:0;
 }
+
+@mixin socialFooter{
+    display: block;    
+    display: flex;
+    font-size: 6vh;
+}

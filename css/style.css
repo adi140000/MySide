@@ -19,6 +19,14 @@ a {
   text-decoration: none;
 }
 
+img {
+  border: 5px solid blue;
+  border-radius: 40%;
+  height: 300px;
+  width: 240px;
+  margin: 2vh;
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -243,6 +251,7 @@ article {
 }
 
 article section {
+  font-family: 'Indie Flower', cursive;
   border-top: 1vh blue dashed;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -258,8 +267,8 @@ article section {
       -ms-flex-align: center;
           align-items: center;
   opacity: 0;
-  -webkit-transition: 1.5s ease;
-  transition: 1.5s ease;
+  -webkit-transition: 0.8s ease;
+  transition: 0.8s ease;
 }
 
 article section.active {
@@ -288,20 +297,27 @@ article section div.section-content {
   padding-bottom: 30vh;
 }
 
+article section div.section-content ul {
+  list-style-type: square type q;
+}
+
 footer {
   background-color: black;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-height: 25vh;
+  overflow: hidden;
+  border-top: 2px solid blue;
 }
 
 footer div.leftfoot {
   border-right: 0.7vh white dashed;
-  -ms-flex-preferred-size: 25%;
-      flex-basis: 25%;
+  -ms-flex-preferred-size: 30%;
+      flex-basis: 30%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -315,19 +331,28 @@ footer div.leftfoot {
 }
 
 footer div.leftfoot i {
-  font-size: 15vh;
-  -webkit-transform: rotate(0);
-          transform: rotate(0);
-  -webkit-animation: loading 1s infinite linear;
-          animation: loading 1s infinite linear;
+  font-size: 12vh;
+  color: white;
 }
 
 footer div.rightfoot {
   font-size: 8vh;
   width: 100%;
-  text-align: center;
-  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   font-family: 'Ubuntu', sans-serif;
+  padding-bottom: 6vh;
+}
+
+footer div.rightfoot div.social {
+  display: none;
 }
 
 div.arrow {
@@ -372,8 +397,11 @@ div.arrow a {
   nav.main div.social .net {
     font-size: 3vh;
   }
+  footer div.leftfoot {
+    padding: 7vh;
+  }
   footer div.leftfoot i {
-    font-size: 7vh;
+    font-size: 10vh;
   }
   div.arrow {
     font-size: 8vh;
@@ -385,6 +413,7 @@ div.arrow a {
     overflow-x: hidden;
   }
   header div.main {
+    height: 80vh;
     padding: 20vh;
   }
   header div.main div.left {
@@ -399,12 +428,14 @@ div.arrow a {
     position: fixed;
     left: 0;
     top: 0;
+    -ms-flex-preferred-size: 20%;
+        flex-basis: 20%;
   }
   header nav.main a.block {
-    font-size: 3.5vh;
+    font-size: 4vh;
   }
-  header nav.main div.social i {
-    font-size: 3.5vh;
+  header nav.main div.social {
+    display: none;
   }
   article {
     width: 100vw;
@@ -420,9 +451,36 @@ div.arrow a {
         -ms-flex-pack: center;
             justify-content: center;
     border-right: 0;
+    padding: 12vh;
   }
   footer div.leftfoot i {
-    font-size: 15vh;
+    font-size: 12vh;
+  }
+  footer div.rightfoot {
+    font-size: 3vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  footer div.rightfoot div.social {
+    display: block;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    font-size: 6vh;
+  }
+  footer div.rightfoot div.social div.net {
+    padding: 3vh;
+  }
+  footer div.rightfoot div.social div.net:hover {
+    font-size: 7vh;
   }
   div.arrow {
     right: 0;
@@ -437,6 +495,7 @@ div.arrow a {
     overflow-x: hidden;
   }
   header div.main {
+    height: 80vh;
     padding: 10vh;
   }
   header div.main div.left {
@@ -456,9 +515,11 @@ div.arrow a {
   }
   header nav.main a.block {
     font-size: 1.5vh;
+    -ms-flex-preferred-size: 20%;
+        flex-basis: 20%;
   }
-  header nav.main div.social i {
-    font-size: 2vh;
+  header nav.main div.social {
+    display: none;
   }
   article section div.section-logo {
     font-size: 10vh;
@@ -478,9 +539,37 @@ div.arrow a {
         -ms-flex-pack: center;
             justify-content: center;
     border-right: 0;
+    padding: 10vh;
   }
   footer div.leftfoot i {
-    font-size: 15vh;
+    font-size: 10vh;
+  }
+  footer div.rightfoot {
+    font-size: 3vh;
+    padding-bottom: 8vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  footer div.rightfoot div.social {
+    display: block;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    font-size: 6vh;
+  }
+  footer div.rightfoot div.social div.net {
+    padding: 3vh;
+  }
+  footer div.rightfoot div.social div.net:hover {
+    font-size: 7vh;
   }
   div.arrow {
     right: 0;
@@ -547,20 +636,6 @@ div.arrow a {
 @keyframes disapper {
   100% {
     opacity: 1;
-  }
-}
-
-@-webkit-keyframes loading {
-  100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
-}
-
-@keyframes loading {
-  100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
   }
 }
 

@@ -21,6 +21,16 @@ a{
     color:white;
     text-decoration: none;
 }
+
+img
+{
+    border: 5px solid blue;
+    border-radius: 40%;
+    height: 300px;
+    width: 240px;
+    margin: 2vh;
+    
+}
 @import "topside";
 
 
@@ -37,13 +47,15 @@ article{
     overflow: hidden;
     section{
         //flex-basis: 100vh;
+        font-family: 'Indie Flower', cursive;
         border-top: 1vh blue dashed;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
         opacity: 0;
-        transition: 1.5s ease;
+        transition: 0.8s ease;
+        
         &.active{
             opacity: 1;
         }
@@ -65,6 +77,10 @@ article{
             font-size: 4vh;
             text-align: justify;
             padding-bottom: 30vh;
+            ul{
+                list-style-type: square type q;
+                
+            }
         }
             
         
@@ -76,27 +92,37 @@ article{
 footer{
     background-color: black;     
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
+    min-height: 25vh;
+    overflow: hidden;
+    border-top: 2px solid blue;
     div.leftfoot{
         border-right: 0.7vh white dashed;
-        flex-basis: 25%;
+        flex-basis: 30%;
         display: flex;
         align-items: center;
         justify-content: flex-end;
-        padding: 8vh;
-        i{
-            font-size: 15vh;
-            transform: rotate(0);
-            animation: loading 1s infinite linear;
+        padding:8vh;
+       
+            i{
+            font-size: 12vh;            
+            color:white;
+            }
 
-        }
+        
     }
     div.rightfoot{
         font-size: 8vh;
         width: 100%;
-        text-align: center;
-        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         font-family: 'Ubuntu', sans-serif;
+        padding-bottom: 6vh;
+        div.social{
+            display: none;
+        }
+        
     }
 }
 
@@ -150,10 +176,11 @@ div.arrow{
         
 
        div.leftfoot{
-           i{
-               font-size:7vh;
+        padding: 7vh;
+        i{
+          font-size:10vh;
 
-           }
+        }
        }
     }
 
@@ -168,6 +195,7 @@ div.arrow{
     }
     header{
     div.main{
+        height: 80vh;
         padding: 20vh;
         div.left{
             align-items: flex-end;
@@ -182,14 +210,13 @@ div.arrow{
         position: fixed;
         left: 0;
         top: 0;
+        flex-basis: 20%;
         a.block{
-            font-size: 3.5vh;
+            font-size: 4vh;
         }
         div.social{
             
-            i{
-                font-size: 3.5vh;
-            }
+           display: none;
         }
 
     }
@@ -203,9 +230,26 @@ div.arrow{
         div.leftfoot{
             justify-content: center;
             border-right: 0;
+            padding: 12vh;
             i{
-                font-size: 15vh;
+                font-size: 12vh;
             }            
+        }
+        div.rightfoot{
+            font-size: 3vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            div.social{
+                @include socialFooter;
+                div.net{
+                    padding: 3vh;
+                    &:hover
+                    {
+                        font-size: 7vh;
+                    }
+                }
+            }
         }
     }
 
@@ -224,6 +268,7 @@ div.arrow{
     }
     header{
     div.main{
+        height:80vh;
         padding: 10vh;
         div.left{
             align-items: flex-end;
@@ -243,15 +288,14 @@ div.arrow{
         left: 0;
         top: 0;
         opacity: 1;
-
+        
         a.block{
             font-size: 1.5vh;
+            flex-basis: 20%;
         }
         div.social{
             
-            i{
-                font-size: 2vh;
-            }
+            display: none;
         }
 
     }
@@ -274,9 +318,28 @@ div.arrow{
         div.leftfoot{
             justify-content: center;
             border-right: 0;
+            padding: 10vh;
             i{
-                font-size: 15vh;
+                font-size: 10vh;
             }            
+
+        }
+        div.rightfoot{
+            font-size: 3vh;
+            padding-bottom: 8vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            div.social{
+                @include socialFooter;
+                div.net{
+                    padding: 3vh;
+                    &:hover
+                    {
+                        font-size: 7vh;
+                    }
+                }
+            }
         }
     }
 
@@ -320,12 +383,7 @@ div.arrow{
     }
 }
 
-@keyframes loading{
 
-    100%{
-        transform: rotate(360deg);
-    }
-}
 
 @keyframes blinkLogo{
     20%{
