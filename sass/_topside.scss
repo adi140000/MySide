@@ -18,36 +18,9 @@ header{
         flex-grow: 1;
         border-bottom: 1px solid blue;
         
-        div.left{
-        
-            font-family: 'Roboto Mono', monospace;        
-            font-size: 8vh;        
-        // background-color: aquamarine;
-            flex-basis: 40%;
-            display: flex;  
-            justify-content: center;
-        
-            h1{
-                opacity:0.6;
-                transition:opacity 0.4s;           
-                
-                &:hover{
-                    opacity:1;
-                    cursor: pointer;
-                    
-                }
-        
-        
-                span{
-                    color:yellow;                
-
-                    &.dot{
-                        opacity:1;
-                        animation: blinkDot 2s infinite linear ;
-                    
-                    }
-                }
-            }
+        div.left{        
+           
+            @include html;
         }
     
         div.right{        

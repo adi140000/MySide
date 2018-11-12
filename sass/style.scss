@@ -11,14 +11,53 @@ html{
 }
 
 body{
-   // background-color: $bgcolor;
-    background-image:url("iii.png");
-    background-repeat: repeat;    
+    background-color: $bgcolor;
     color: $color;    
     min-height: 100vh;    
     font-family: 'Passion One', cursive;  
     overflow-x: hidden;  
     
+    
+}
+
+div.tmp{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top:0;
+    left: 0;
+    background-color:royalblue;
+    z-index: 5;    
+    animation: apperPage .2s 20.2s linear both;
+    div.label{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        animation: blinkLabel 5s infinite linear both;
+        @include html;
+    }
+    
+    div.bar{
+        background-color: white;
+        width: 60vw;
+        height: 0.3vh;
+        position: absolute;
+        top:70%;
+        left:50%;
+        transform: translate(-50%,-50%);
+        overflow: hidden;
+        &::before{
+            content: "";
+            width: 100%;
+            height: 100%;
+            background-color: blue;
+            position: absolute;
+            left: 100%;
+            top: 0;
+            animation: barMove 20s linear both;
+        }
+    }
 }
 
 a{
@@ -105,7 +144,8 @@ article{
             padding: 10vh;
             font-size: 4vh;
             padding-bottom: 30vh;      
-            text-align: justify;     
+            text-align: justify;
+               
             ul.skill{                
                 list-style-image: url('/img/angle-double-right-solid.svg'); 
                 li{
@@ -492,5 +532,62 @@ div.arrow{
     }
     100%{
         opacity: 1;
+    }
+}
+
+@keyframes barMove{
+    0%{
+        left: 0;
+    }
+    5%{
+        left: 7%;
+    }
+    20%{
+        left:25%;
+    }
+    40%{
+        left:32%;
+    }
+    55%{
+        left:60%
+    }
+    70%{
+        left:85%;
+    }
+    85%{
+        left: 100%;
+    }
+   
+}
+
+@keyframes apperPage{
+      
+    100%{
+        z-index: -3;
+        background-color: transparent;
+    }
+}
+
+@keyframes blinkLabel{
+    0%{
+        opacity: 0.7;
+    }
+    15%{
+        opacity: 0.6;        
+    }
+    25%{
+        opacity: 0.8;
+    }
+    40%{
+        opacity: 0.2;
+    }
+    65%{
+        opacity: 0.7;
+    }
+    85%{
+        opacity: 0.2;
+    }
+    100%{
+        opacity: 0.6;
     }
 }

@@ -3,7 +3,7 @@ const mainNav = document.querySelector("nav.main");
 const arrow = document.querySelector("div.arrow");
 const logo = document.querySelector("div.main");
 const sections = document.querySelectorAll("article section.work");
-const me = document.querySelector(".icon-at");
+
 
 
 const toggleOpacity=function(){
@@ -103,14 +103,15 @@ setInterval(changesIcons , 1000);
 
 
 //scroll Top page afetr click arrow
-$("div.arrow").click(function(){
-    
-    $("html,body").animate({scrollTop:0},600);
+$("div.arrow").on("click","a",function(){
+    console.log($.attr(this,"href"))
+    const $name=$($(this).attr("href"));
+    $("html,body").animate({scrollTop:$name.offset().top},900);
 })
 
 //scroll by click on a.block 
-$("a.block").click(function(){
+$("a.block").on("click",function(){
     const name=$(this).attr("href");
-    //console.log($(name).offset().top);
-    $("html,body").animate({scrollTop:$(name).offset().top},600);
+    console.log(this);
+    $("html,body").animate({scrollTop:$(name).offset().top},900);
 })
