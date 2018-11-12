@@ -6,7 +6,9 @@
     @include reset;
 }
 
-
+html{
+    //scroll-behavior: smooth;
+}
 
 body{
    // background-color: $bgcolor;
@@ -33,6 +35,8 @@ img
     margin: 2vh;
     
 }
+
+
 @import "topside";
 
 
@@ -148,7 +152,7 @@ footer{
         
     }
     div.rightfoot{
-        font-size: 8vh;
+        font-size: 4vh;
         width: 100%;
         display: flex;
         justify-content: center;

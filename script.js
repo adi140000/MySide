@@ -3,25 +3,23 @@ const mainNav = document.querySelector("nav.main");
 const arrow = document.querySelector("div.arrow");
 const logo = document.querySelector("div.main");
 const sections = document.querySelectorAll("article section.work");
-
+const me = document.querySelector(".icon-at");
 
 
 const toggleOpacity=function(){
     
     sections.forEach(function (section){
-        console.log(scrollY);
-        console.log(section.offsetTop);
+       
         if(window.scrollY>=(section.offsetTop-(section.offsetHeight*0.15)))
         {
-            console.log("work");
+            
             section.classList.add("active");            
             //section.style.opacity=1;
            // $(section).animate({opacity},400);
         }
         else if(window.scrollY<section.offsetTop-section.offsetHeight)
         {
-           //section.style.opacity=0;
-           console.log("done");
+           //section.style.opacity=0;         
             section.classList.remove("active");
         }
     })
@@ -76,9 +74,7 @@ window.addEventListener("scroll" ,fixdMenu);
 
 window.addEventListener("scroll",showArrow);
 
-window.addEventListener("mousemove",function(e){
-document.cr
-})
+
 
 
 //battery
@@ -100,3 +96,21 @@ const battery = function(){
 const changesIcons = battery();
 
 setInterval(changesIcons , 1000);
+
+
+
+
+
+
+//scroll Top page afetr click arrow
+$("div.arrow").click(function(){
+    
+    $("html,body").animate({scrollTop:0},600);
+})
+
+//scroll by click on a.block 
+$("a.block").click(function(){
+    const name=$(this).attr("href");
+    //console.log($(name).offset().top);
+    $("html,body").animate({scrollTop:$(name).offset().top},600);
+})
