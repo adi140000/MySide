@@ -28,13 +28,13 @@ div.tmp{
     left: 0;
     background-color:royalblue;
     z-index: 5;    
-    animation: apperPage .2s 20.2s linear both;
+    animation: apperPage .2s 8.2s linear both;
     div.label{
         position: absolute;
         left: 50%;
         top: 50%;
         transform: translate(-50%,-50%);
-        animation: blinkLabel 5s infinite linear both;
+        animation: blinkLabel 2s infinite linear both;
         @include html;
     }
     
@@ -55,7 +55,7 @@ div.tmp{
             position: absolute;
             left: 100%;
             top: 0;
-            animation: barMove 20s linear both;
+            animation: barMove 8s linear both;
         }
     }
 }
@@ -343,6 +343,14 @@ div.arrow{
 }
 
 @media only screen and (orientation:portrait){
+
+    div.tmp{
+        div.label{
+
+            font-size: 3vh;
+        }
+    }
+
     body{
         overflow-x: hidden;
     }
